@@ -1,0 +1,434 @@
+   <style>
+      body {
+        font-family: "Quicksand", sans-serif;
+        background-color: #fff0f5;
+        margin: 0;
+        padding: 0;
+        color: #444;
+
+      }
+
+      nav {
+        background-color: #ffe4e1;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        animation: slideDown 0.5s ease-out;
+      }
+
+      .nav__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .sweet-navbar {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff0fb;
+  border: 2px solid #ffb8eb;
+  border-radius: 45px;
+  padding: 7px 20px;
+  display: flex;
+  gap: 12px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(6,6,8,7,.06);
+  font-family: 'Patrick Hand', cursive;
+}
+
+.sweet-navbar a {
+  text-decoration: none;
+  color: #9d5c9b;
+  font-size: 0.6rem;
+  padding: 6px 15px;
+  border-radius: 20px;
+  background: #ffe2f2;
+  transition: all 0.2s ease;
+}
+
+.sweet-navbar a:hover {
+  background: #fcbff1;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
+      .logo a {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #d87093;
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+      }
+
+      ul li a {
+        text-decoration: none;
+        color: #d87093;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      ul li a:hover {
+        color: #ff69b4;
+      }
+
+      .section__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        gap: 2rem;
+      }
+
+      .content {
+        max-width: 500px;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        color: #ff69b4;
+        animation: floatText 3s ease-in-out infinite;
+      }
+
+      .title {
+        font-size: 2rem;
+        color: #d87093;
+        font-size: 2.5rem;
+      }
+
+      .title span {
+        color: #8a0a64;
+      }
+
+      .description {
+        font-size: 1rem;
+        margin-top: 1rem;
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .section__container button {
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        border: none;
+        border-radius: 20px;
+        background-color: #ffb6c1;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .section__container button:hover {
+        background-color: #ffa6c9;
+        transform: scale(1.05);
+
+      }
+      .image img {
+        width: 250px;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(5, 6, 7, 7.1);
+        animation: floatImg 3s ease-in-out infinite;
+      }
+      .image img {
+        width: 300px;
+        cursor: pointer;
+      }
+      @keyframes floatImg {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      @keyframes floatText {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(5px);
+        }
+      }
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      #album {
+        background-color: #faece9;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+      }
+      #about::before {
+        content: "✨";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 2rem;
+        opacity: 0.7;
+        animation: rotate 4s linear infinite;
+      }
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .gallery {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .gallery-item {
+        max-width: 300px;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 2px 6px 10px rgba(5, 7, 5, 7.1);
+        transition: 0.3s;
+      }
+
+      .gallery-item img:hover {
+        transform: scale(1.35);
+        filter: brightness(1.0);
+        }
+
+      .gallery-item p {
+        font-size: 1.0rem;
+        margin-top: 0.5rem;
+        color: #666;
+      }
+
+      #portfolio {
+        background-color: #f7e0fe;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .portfolio-item {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 10px;
+        display: inline-block;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .portfolio-item:hover {
+        transform: scale(1.02);
+        background-color: #f0e6ff;
+      }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+       #cerita {
+        background-color: #fae5c5;
+        padding: 2rem;
+        border-radius: 15px;
+        margin-top: 2rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #cerita h2 {
+        color: #d87093;
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      #cerita p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 1rem;
+      }
+
+      #cerita .dialogue {
+        font-style: italic;
+        color: #777;
+      }
+
+      #song-story {
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #fce0f3, #fdade8);
+  overflow: hidden;
+  z-index: 1;
+}
+
+#song-story h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ff6fa2;
+  margin-bottom: 30px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.song-container {
+  position: relative;
+  display: inline-block;
+  animation: fadeInUp 1s ease;
+  z-index: 2;
+}
+
+.spotify-code {
+  width: 420px;
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(255, 121, 172, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.spotify-code:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+
+.dekorasi {
+  position: absolute;
+  width: 60px;
+  height: auto;
+  z-index: 3;
+  animation: float 4s ease-in-out infinite;
+}
+
+.heart {
+  top: -20px;
+  left: -30px;
+}
+
+.kelinci {
+  bottom: -10px;
+  right: -30px;
+}
+
+.bunga {
+  top: 10px;
+  right: 40px;
+}
+
+
+.gif-bg {
+  position: absolute;
+  width: 150px;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.gif1 {
+  top: 10%;
+  left: 10%;
+}
+
+.gif2 {
+  bottom: 5%;
+  right: 10%;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 16px;
+  border: none;
+  background: #ffb8eb;
+  color: white;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+button:hover {
+  background: #ff8dd3;
+}
+
+  .entry {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    z-index: 1;
+    position: relative;
+    min-height: 160px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  button {
+    background-color: #d9b3ff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+    transition: background 0.2s ease-in-out;
+  }
+
+  button:hover {
+    background-color: #c89cff;
+  }
+
+  @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+
+      }
+    </style>
